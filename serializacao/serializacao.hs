@@ -23,8 +23,8 @@ chop8 :: Byte -> [Byte]
 chop8 [] = []
 chop8 xs = take 8 xs : chop8 (drop 8 xs)
 
-encode :: [Char] -> Byte
-encode = concat . map (bit2Byte . int2Bit . ord)
+myEncode :: [Char] -> Byte
+myEncode = concat . map (bit2Byte . int2Bit . ord)
 
-decode :: Byte -> [Char]
-decode = map (chr . bit2Int) . chop8
+myDecode :: Byte -> [Char]
+myDecode = map (chr . bit2Int) . chop8
